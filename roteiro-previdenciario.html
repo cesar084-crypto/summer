@@ -1,0 +1,986 @@
+<title>Roteiros Previdenciários</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --surface-alt: #F0EDE6;
+    --text: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+    --accent: #1B5E3B;
+    --accent-light: #E8F0EB;
+    --accent-dark: #0F3D25;
+    --border: #D8D4CC;
+    --border-light: #E8E4DC;
+    --check-bg: #D4EDDA;
+    --check-border: #28A745;
+    --warn: #B8860B;
+    --warn-bg: #FFF8E1;
+    --info: #1565C0;
+    --info-bg: #E3F2FD;
+    --danger: #C62828;
+    --danger-bg: #FFEBEE;
+    --section-num: #B8B0A0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141412;
+      --surface: #1E1E1C;
+      --surface-alt: #2A2A26;
+      --text: #E8E6E0;
+      --text-secondary: #B8B4AC;
+      --text-muted: #8A8680;
+      --accent: #4CAF6A;
+      --accent-light: #1A2E22;
+      --accent-dark: #6FCF8A;
+      --border: #3A3830;
+      --border-light: #2E2C26;
+      --check-bg: #1A2E22;
+      --check-border: #4CAF6A;
+      --warn: #FFB74D;
+      --warn-bg: #2E2410;
+      --info: #64B5F6;
+      --info-bg: #0D1F33;
+      --danger: #EF5350;
+      --danger-bg: #2E1414;
+      --section-num: #5A5648;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #141412;
+    --surface: #1E1E1C;
+    --surface-alt: #2A2A26;
+    --text: #E8E6E0;
+    --text-secondary: #B8B4AC;
+    --text-muted: #8A8680;
+    --accent: #4CAF6A;
+    --accent-light: #1A2E22;
+    --accent-dark: #6FCF8A;
+    --border: #3A3830;
+    --border-light: #2E2C26;
+    --check-bg: #1A2E22;
+    --check-border: #4CAF6A;
+    --warn: #FFB74D;
+    --warn-bg: #2E2410;
+    --info: #64B5F6;
+    --info-bg: #0D1F33;
+    --danger: #EF5350;
+    --danger-bg: #2E1414;
+    --section-num: #5A5648;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding-inline: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Merriweather', Georgia, serif;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin: 2.5rem 0 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .legal-refs {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    background: var(--surface-alt);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.3rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--section-num);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--accent);
+  }
+
+  h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+  }
+
+  .checklist li:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .checklist li.checked {
+    background: var(--check-bg);
+    border-color: var(--check-border);
+  }
+
+  .checklist li.checked .check-icon {
+    color: var(--check-border);
+  }
+
+  .check-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    font-size: 12px;
+    color: transparent;
+    transition: all 0.15s;
+    line-height: 1;
+  }
+
+  .checklist li.checked .check-icon {
+    border-color: var(--check-border);
+    background: var(--check-border);
+    color: #fff;
+  }
+
+  .note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .alert {
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    margin: 1rem 0;
+    line-height: 1.55;
+    border-left: 3px solid;
+  }
+
+  .alert-info {
+    background: var(--info-bg);
+    border-color: var(--info);
+    color: var(--text);
+  }
+
+  .alert-warn {
+    background: var(--warn-bg);
+    border-color: var(--warn);
+    color: var(--text);
+  }
+
+  .alert-danger {
+    background: var(--danger-bg);
+    border-color: var(--danger);
+    color: var(--text);
+  }
+
+  .alert strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .deficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .def-card {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+
+  .def-card strong {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--accent);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .step-flow {
+    position: relative;
+    padding-left: 28px;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .step-flow::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .step {
+    position: relative;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+  .step::before {
+    content: attr(data-step);
+    position: absolute;
+    left: -28px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-title {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+    color: var(--text);
+  }
+
+  .tnu-item {
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .tnu-item .tnu-sumula {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 2rem;
+  }
+
+  .toc-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .toc li {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .toc a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+  }
+
+  .progress-bar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 0;
+    z-index: 10;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .progress-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border-light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  .progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    min-width: 60px;
+    text-align: right;
+  }
+
+  .separator {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 2rem 0;
+  }
+
+  footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 500px) {
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.1rem; }
+    .deficiency-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <span class="progress-label" id="progressLabel">0 / 0</span>
+</div>
+
+<h1>Roteiros e Checklists para Benefícios Previdenciários e Assistenciais</h1>
+<p class="subtitle">Documentação necessária, rito administrativo, rito judicial e jurisprudência da TNU</p>
+
+<div class="legal-refs">
+  Legislação base: Lei 8.213/91 (Planos de Benefícios) &bull; Lei 8.742/93 (LOAS) &bull; Lei 13.146/15 (Estatuto da Pessoa com Deficiência) &bull; Decreto 3.048/99 (Regulamento) &bull; IN INSS/PRES 128/2022 &bull; ADI 2.110 &bull; ADI 2.111
+</div>
+
+<nav class="toc">
+  <div class="toc-title">Sumário</div>
+  <ol>
+    <li><a href="#salario-maternidade">Salário-Maternidade Rural</a></li>
+    <li><a href="#aposentadoria-rural">Aposentadoria Rural por Idade</a></li>
+    <li><a href="#bpc-deficiencia">BPC-LOAS por Deficiência</a></li>
+    <li><a href="#bpc-idade">BPC-LOAS por Idade</a></li>
+    <li><a href="#rito-administrativo">Rito do Processo Administrativo (INSS)</a></li>
+    <li><a href="#rito-judicial">Rito do Processo Judicial</a></li>
+    <li><a href="#tnu">Principais Temas da TNU</a></li>
+  </ol>
+</nav>
+
+<!-- ========================================= -->
+<!-- 1. SALÁRIO-MATERNIDADE RURAL              -->
+<!-- ========================================= -->
+
+<h2 id="salario-maternidade"><span class="num">Seção 01</span> Salário-Maternidade Rural</h2>
+
+<p class="intro-text">
+  Arts. 25, III, 26, VI, 39, parágrafo único, 71 a 73-A da Lei 8.213/91. Devido à segurada especial durante 120 dias, no valor de 1 salário mínimo, sem exigência de contribuição formal, bastando a comprovação de atividade rural.
+</p>
+
+<div class="alert alert-info">
+  <strong>Carência</strong>
+  Segurada especial: 10 meses de comprovação de atividade rural (art. 25, III). Segurada empregada, avulsa e doméstica: independe de carência (art. 26, VI). Em caso de parto antecipado, a carência é reduzida proporcionalmente (art. 25, parágrafo único). Conforme ADI 2.110 e ADI 2.111, o STF confirmou a constitucionalidade da exigência de carência.
+</div>
+
+<h3>Documentos da Requerente</h3>
+<ul class="checklist" data-group="sm">
+  <li><span class="check-icon">&#10003;</span><span>Documento de identidade com foto (RG ou CNH)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CPF</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão de nascimento ou casamento atualizada</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de residência recente (últimos 3 meses)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Número do NIT/PIS/PASEP ou inscrição no INSS</span></li>
+</ul>
+
+<h3>Comprovação do Fato Gerador</h3>
+<ul class="checklist" data-group="sm">
+  <li><span class="check-icon">&#10003;</span><span>Certidão de nascimento do filho (nascido vivo) <span class="note">Ou atestado médico em caso de natimorto</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>Termo de guarda judicial para fins de adoção, se for o caso (art. 71-A)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão de óbito da mãe + certidão de nascimento do filho, se cônjuge sobrevivente requerer (art. 71-B)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Atestado médico indicando o mês gestacional (para requerimento antes do parto, a partir de 28 dias antes)</span></li>
+</ul>
+
+<h3>Comprovação da Atividade Rural (mínimo 10 meses anteriores ao parto)</h3>
+<ul class="checklist" data-group="sm">
+  <li><span class="check-icon">&#10003;</span><span>Autodeclaração do segurado especial (conforme art. 38-B da Lei 8.213/91) <span class="note">Formulário próprio do INSS, com informações sobre a atividade</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>Cadastro Nacional de Informações Sociais (CNIS) — verificar registros de atividade rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Contrato de arrendamento, parceria, meação ou comodato de imóvel rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Declaração do Sindicato dos Trabalhadores Rurais com homologação do INSS</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Bloco de notas do produtor rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Notas fiscais de venda de produção rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Declaração de Aptidão ao PRONAF (DAP) ou Cadastro Nacional da Agricultura Familiar (CAF)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de cadastro no INCRA (CCIR) ou ITR do imóvel</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão da FUNAI (se indígena) ou documentação quilombola, se aplicável</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Documentos em nome de membros do grupo familiar que comprovem atividade rural conjunta</span></li>
+</ul>
+
+<div class="alert alert-warn">
+  <strong>Atenção</strong>
+  Conforme art. 39, parágrafo único, a segurada especial não precisa comprovar contribuição formal — basta demonstrar o exercício de atividade rural, ainda que de forma descontínua, nos 10 (no caso de carência) ou 12 meses imediatamente anteriores ao início do benefício. Valor: 1 salário mínimo (art. 73, II).
+</div>
+
+<hr class="separator">
+
+<!-- ========================================= -->
+<!-- 2. APOSENTADORIA RURAL POR IDADE          -->
+<!-- ========================================= -->
+
+<h2 id="aposentadoria-rural"><span class="num">Seção 02</span> Aposentadoria Rural por Idade</h2>
+
+<p class="intro-text">
+  Arts. 11, VII, 39, I, 48 §§ 1º a 4º e 143 da Lei 8.213/91. Idade reduzida: 60 anos (homem) e 55 anos (mulher). Carência: 180 meses de comprovação de atividade rural.
+</p>
+
+<div class="alert alert-info">
+  <strong>Requisitos legais (art. 48, §§ 1º e 2º)</strong>
+  Idade: 60 anos (homem) / 55 anos (mulher). Comprovação de efetivo exercício de atividade rural, ainda que de forma descontínua, por tempo igual à carência (180 meses), no período imediatamente anterior ao requerimento. A EC 103/2019 não alterou a idade para trabalhadores rurais (segurados especiais).
+</div>
+
+<h3>Documentos Pessoais</h3>
+<ul class="checklist" data-group="ar">
+  <li><span class="check-icon">&#10003;</span><span>Documento de identidade com foto (RG ou CNH)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CPF</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão de nascimento ou casamento</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de residência recente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Número do NIT/PIS/PASEP</span></li>
+</ul>
+
+<h3>Comprovação de Atividade Rural (período de carência = 180 meses)</h3>
+<ul class="checklist" data-group="ar">
+  <li><span class="check-icon">&#10003;</span><span>Autodeclaração do segurado especial (art. 38-B da Lei 8.213/91)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CNIS — Cadastro Nacional de Informações Sociais (consulta prévia)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Contrato de arrendamento, parceria, meação ou comodato</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Declaração do Sindicato dos Trabalhadores Rurais homologada pelo INSS</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Bloco de notas de produtor rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Notas fiscais de venda de produção</span></li>
+  <li><span class="check-icon">&#10003;</span><span>DAP ou CAF (Cadastro Nacional da Agricultura Familiar)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de cadastro no INCRA / CCIR / ITR</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Escritura ou contrato de compra e venda do imóvel rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão de casamento com profissão declarada como lavrador/agricultor</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Histórico escolar rural (se estudou em escola rural)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certificado de reservista com profissão rural (para homens)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Ficha de associado em cooperativa ou sindicato rural</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de recebimento de benefício assistencial rural anterior (se houver)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão de nascimento dos filhos com profissão rural dos pais</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Documentos em nome de membros do grupo familiar (extensão da prova ao grupo — Súmula 73/TNU)</span></li>
+</ul>
+
+<div class="alert alert-warn">
+  <strong>Início de prova material</strong>
+  A prova exclusivamente testemunhal não é admitida para comprovação de atividade rural (Súmula 149/STJ). É necessário início de prova material, que pode ser estendida por prova testemunhal. Documentos do cônjuge ou membro do grupo familiar podem ser utilizados como início de prova material.
+</div>
+
+<hr class="separator">
+
+<!-- ========================================= -->
+<!-- 3. BPC-LOAS POR DEFICIÊNCIA               -->
+<!-- ========================================= -->
+
+<h2 id="bpc-deficiencia"><span class="num">Seção 03</span> BPC-LOAS por Deficiência</h2>
+
+<p class="intro-text">
+  Art. 20 da Lei 8.742/93 (LOAS) c/c art. 2º da Lei 13.146/15 (Estatuto da PcD). Garantia de 1 salário mínimo mensal à pessoa com deficiência que comprove impedimento de longo prazo e impossibilidade de prover a própria manutenção.
+</p>
+
+<div class="alert alert-info">
+  <strong>Requisitos cumulativos (art. 20 da LOAS)</strong>
+  (1) Deficiência: impedimento de longo prazo (mínimo 2 anos — art. 20, §10) de natureza física, mental, intelectual ou sensorial; (2) Miserabilidade: renda familiar per capita igual ou inferior a 1/4 do salário mínimo (art. 20, §3º), podendo ser ampliada até 1/2 SM por regulamento (§11-A); (3) Inscrição no CadÚnico e CPF (art. 20, §12); (4) Avaliação médica e social pelo INSS (art. 20, §6º).
+</div>
+
+<h3>Documentos do Requerente</h3>
+<ul class="checklist" data-group="bpcd">
+  <li><span class="check-icon">&#10003;</span><span>Documento de identidade com foto (RG ou CNH) <span class="note">Ou certidão de nascimento se menor ou incapaz</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>CPF do requerente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de residência recente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>NIS (Número de Identificação Social) ou NIT</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Inscrição no CadÚnico (Cadastro Único) atualizada <span class="note">Obrigatório — art. 20, §12 da LOAS</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>Registro biométrico (CIN, título eleitoral ou CNH) — art. 20, §12-A</span></li>
+</ul>
+
+<h3>Comprovação da Deficiência</h3>
+<ul class="checklist" data-group="bpcd">
+  <li><span class="check-icon">&#10003;</span><span>Laudos e relatórios médicos detalhados (com CID, descrição do impedimento, prognóstico e data de início) <span class="note">Quanto mais detalhado, melhor para a perícia do INSS</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>Exames complementares (laboratoriais, de imagem, eletroencefalograma, audiometria, etc.)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Receituário médico atualizado (demonstra tratamento contínuo)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Relatório de acompanhamento em CAPS, APAE, AACD ou instituições similares</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Carteira da pessoa com deficiência ou laudo de avaliação biopsicossocial, se existente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Declaração escolar (se menor) informando necessidades especiais de aprendizado</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Histórico de internações hospitalares (se houver)</span></li>
+</ul>
+
+<h3>Comprovação da Miserabilidade (renda familiar per capita ≤ 1/4 SM)</h3>
+<ul class="checklist" data-group="bpcd">
+  <li><span class="check-icon">&#10003;</span><span>Declaração de composição do grupo familiar e renda (formulário INSS)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CPF de todos os membros da família que vivam sob o mesmo teto</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovantes de renda de todos os membros (holerites, extratos bancários, CTPS)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Declaração de que não exerce atividade remunerada (se desempregado)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de despesas com medicamentos, tratamentos e transporte (art. 20-B) <span class="note">Gastos médicos que comprometam a subsistência podem flexibilizar o critério de renda</span></span></li>
+</ul>
+
+<div class="alert alert-info">
+  <strong>Exclusão de renda (art. 20, §14)</strong>
+  BPC ou benefício previdenciário de até 1 SM concedido a idoso (+65) ou pessoa com deficiência da mesma família não é computado na renda per capita. Rendimentos de estágio supervisionado e aprendizagem também não (art. 20, §9º).
+</div>
+
+<h3>Deficiências Mais Comuns que Geram Concessão de BPC</h3>
+
+<div class="deficiency-grid">
+  <div class="def-card">
+    <strong>Intelectual / Mental</strong>
+    Deficiência intelectual (retardo mental — CID F70-F79), Transtorno do Espectro Autista (CID F84), Esquizofrenia (F20), Transtorno Bipolar grave (F31), Depressão grave recorrente (F33.2/F33.3)
+  </div>
+  <div class="def-card">
+    <strong>Física / Motora</strong>
+    Paralisia cerebral (G80), Paraplegia/Tetraplegia (G82), Amputações, Sequelas de AVC (I69), Distrofia muscular (G71), Esclerose múltipla (G35), Artrite reumatóide grave (M05-M06)
+  </div>
+  <div class="def-card">
+    <strong>Sensorial — Visão</strong>
+    Cegueira (H54.0), Baixa visão severa bilateral (H54.1-H54.2), Glaucoma avançado (H40), Retinopatia diabética grave (H36.0)
+  </div>
+  <div class="def-card">
+    <strong>Sensorial — Audição</strong>
+    Surdez bilateral (H90-H91), Surdocegueira, Perda auditiva neurossensorial profunda bilateral
+  </div>
+  <div class="def-card">
+    <strong>Doenças Crônicas Incapacitantes</strong>
+    HIV/AIDS (B20-B24), Insuficiência renal crônica em diálise (N18), Lúpus Eritematoso Sistêmico grave (M32), Epilepsia refratária (G40), Fibrose cística (E84)
+  </div>
+  <div class="def-card">
+    <strong>Doenças Oncológicas</strong>
+    Neoplasias malignas com sequelas incapacitantes (C00-C97), especialmente quando geram limitações permanentes mesmo após tratamento
+  </div>
+  <div class="def-card">
+    <strong>Cardíaca / Respiratória</strong>
+    Insuficiência cardíaca grave (I50), DPOC avançada (J44), Cardiopatia congênita grave, Hipertensão arterial pulmonar (I27)
+  </div>
+  <div class="def-card">
+    <strong>Congênitas / Genéticas</strong>
+    Síndrome de Down (Q90), Microcefalia por Zika (Q02), Espinha bífida (Q05), Hidrocefalia (Q03), Fenilcetonúria (E70)
+  </div>
+</div>
+
+<div class="alert alert-warn">
+  <strong>Avaliação biopsicossocial (art. 2º, §1º, Lei 13.146/15)</strong>
+  A avaliação não se limita ao diagnóstico médico. Considera: (I) impedimentos nas funções e estruturas do corpo; (II) fatores socioambientais, psicológicos e pessoais; (III) limitação no desempenho de atividades; (IV) restrição de participação social. A perícia é realizada por equipe do INSS composta por médico perito e assistente social (art. 20, §6º da LOAS).
+</div>
+
+<hr class="separator">
+
+<!-- ========================================= -->
+<!-- 4. BPC-LOAS POR IDADE                     -->
+<!-- ========================================= -->
+
+<h2 id="bpc-idade"><span class="num">Seção 04</span> BPC-LOAS por Idade</h2>
+
+<p class="intro-text">
+  Art. 20, caput, da Lei 8.742/93. Garantia de 1 salário mínimo mensal ao idoso com 65 anos ou mais que comprove não possuir meios de prover a própria manutenção.
+</p>
+
+<h3>Documentos do Requerente</h3>
+<ul class="checklist" data-group="bpci">
+  <li><span class="check-icon">&#10003;</span><span>Documento de identidade com foto (RG ou CNH)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CPF</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Certidão de nascimento ou casamento (para comprovação de idade)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de residência recente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>NIS (Número de Identificação Social)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Inscrição no CadÚnico atualizada <span class="note">Obrigatório — art. 20, §12 da LOAS</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>Registro biométrico (CIN, título eleitoral ou CNH) — art. 20, §12-A</span></li>
+</ul>
+
+<h3>Comprovação da Miserabilidade</h3>
+<ul class="checklist" data-group="bpci">
+  <li><span class="check-icon">&#10003;</span><span>Declaração de composição do grupo familiar e renda (formulário INSS)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CPF de todos os membros da família que vivam sob o mesmo teto</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovantes de renda de todos os membros do grupo familiar</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Declaração de que não exerce atividade remunerada (se aplicável)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CTPS de membros do grupo familiar (verificar vínculos)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Extratos bancários dos últimos 3 meses (de todos os membros, se solicitado)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovante de despesas essenciais (aluguel, medicamentos, contas) <span class="note">Útil para flexibilização judicial do critério de renda</span></span></li>
+</ul>
+
+<div class="alert alert-info">
+  <strong>Não cumulação e exclusão de renda</strong>
+  O BPC não pode ser acumulado com outro benefício da seguridade social (art. 20, §4º), salvo assistência médica e pensão indenizatória. O BPC ou benefício previdenciário de até 1 SM de outro idoso ou PcD da mesma família é excluído do cálculo de renda (art. 20, §14).
+</div>
+
+<hr class="separator">
+
+<!-- ========================================= -->
+<!-- 5. RITO ADMINISTRATIVO                    -->
+<!-- ========================================= -->
+
+<h2 id="rito-administrativo"><span class="num">Seção 05</span> Rito do Processo Administrativo (INSS)</h2>
+
+<div class="step-flow">
+  <div class="step" data-step="1">
+    <span class="step-title">Consulta prévia e preparação</span>
+    Reunir toda a documentação do checklist aplicável. Consultar o CNIS (extrato previdenciário) via Meu INSS. Atualizar CadÚnico no CRAS (para BPC). Obter a DAP/CAF atualizada (para benefícios rurais).
+  </div>
+  <div class="step" data-step="2">
+    <span class="step-title">Agendamento do requerimento</span>
+    Acessar o portal Meu INSS (meu.inss.gov.br) ou ligar para a Central 135. Selecionar o serviço desejado (salário-maternidade, aposentadoria por idade rural, BPC). Agendar data e local de atendimento (ou protocolar online).
+  </div>
+  <div class="step" data-step="3">
+    <span class="step-title">Protocolo do requerimento administrativo</span>
+    Comparecer à Agência da Previdência Social (APS) na data agendada ou protocolar via Meu INSS. Apresentar toda a documentação. O INSS gera o número do protocolo (NB — Número do Benefício). Prazo de análise: 45 dias para benefícios previdenciários, 30 dias para salário-maternidade (art. 73-A, Lei 15.415/2026).
+  </div>
+  <div class="step" data-step="4">
+    <span class="step-title">Perícia médica e avaliação social (BPC por deficiência)</span>
+    Agendamento automático após protocolo. Comparecer com laudos, exames e receituários. A avaliação é biopsicossocial: médico perito + assistente social do INSS (art. 20, §6º da LOAS).
+  </div>
+  <div class="step" data-step="5">
+    <span class="step-title">Entrevista rural (aposentadoria e salário-maternidade rural)</span>
+    O INSS pode convocar para entrevista presencial. Preparar o segurado com informações sobre a atividade (tipo de cultura, localização, ferramentas, rotina). Levar documentos complementares de início de prova material.
+  </div>
+  <div class="step" data-step="6">
+    <span class="step-title">Resultado — Concessão ou Indeferimento</span>
+    Consultar resultado no Meu INSS. Se concedido: verificar a data de início do benefício (DIB) e o valor. Se indeferido: o INSS deve fundamentar a decisão.
+  </div>
+  <div class="step" data-step="7">
+    <span class="step-title">Recurso administrativo (em caso de indeferimento)</span>
+    Prazo: 30 dias a contar da ciência da decisão. Recurso à Junta de Recursos da Previdência Social (JRPS) — 1ª instância recursal. Recurso especial ao Conselho de Recursos da Previdência Social (CRPS) — 2ª instância. O recurso tem efeito suspensivo e devolutivo.
+  </div>
+</div>
+
+<div class="alert alert-warn">
+  <strong>Salário-maternidade — concessão automática (art. 73-A, Lei 15.415/2026)</strong>
+  Se o INSS não analisar o pedido em 30 dias, haverá concessão provisória e automática do salário-maternidade, sem prejuízo de posterior verificação dos requisitos. Valores recebidos provisoriamente não estão sujeitos a repetição, salvo má-fé.
+</div>
+
+<hr class="separator">
+
+<!-- ========================================= -->
+<!-- 6. RITO JUDICIAL                          -->
+<!-- ========================================= -->
+
+<h2 id="rito-judicial"><span class="num">Seção 06</span> Rito do Processo Judicial</h2>
+
+<div class="step-flow">
+  <div class="step" data-step="1">
+    <span class="step-title">Esgotar a via administrativa (ou exceções)</span>
+    Em regra, exige-se o prévio requerimento administrativo (Tema 350/STF — RE 631.240). Exceções: (a) notória negativa de concessão pelo INSS; (b) quando o INSS se recusa a receber o requerimento; (c) justificativa judicial para dispensa.
+  </div>
+  <div class="step" data-step="2">
+    <span class="step-title">Escolha da competência</span>
+    Valor da causa até 60 salários mínimos: Juizado Especial Federal (Lei 10.259/01). Valor acima: Vara Federal da subseção judiciária do domicílio do segurado. Foro: domicílio do segurado (art. 109, §2º, CF/88).
+  </div>
+  <div class="step" data-step="3">
+    <span class="step-title">Petição inicial</span>
+    Documentos: procuração, declaração de hipossuficiência (se justiça gratuita), cópia do indeferimento administrativo, todos os documentos do checklist, laudos e exames. Pedidos: concessão do benefício, tutela de urgência/antecipada (se presentes os requisitos do art. 300, CPC), condenação em honorários.
+  </div>
+  <div class="step" data-step="4">
+    <span class="step-title">Tutela de urgência / antecipada</span>
+    Fundamentar a verossimilhança do direito e o perigo de dano ou risco ao resultado útil do processo. Especialmente relevante em BPC (risco alimentar) e salário-maternidade (urgência temporal).
+  </div>
+  <div class="step" data-step="5">
+    <span class="step-title">Perícia judicial (BPC por deficiência)</span>
+    Requerimento de perícia médica judicial. Formulação de quesitos pelo advogado (impedimento de longo prazo, barreiras sociais, grau de participação). Pedido de avaliação biopsicossocial conforme Lei 13.146/15.
+  </div>
+  <div class="step" data-step="6">
+    <span class="step-title">Produção de provas</span>
+    Prova documental: todos os documentos do checklist. Prova testemunhal: vizinhos, líderes comunitários, membros do sindicato (aposentadoria rural). Prova pericial: perícia médica e social (BPC). Inspeção judicial: possível em casos rurais.
+  </div>
+  <div class="step" data-step="7">
+    <span class="step-title">Sentença e recursos</span>
+    JEF: recurso inominado para a Turma Recursal (prazo 10 dias). Vara Federal: apelação para o TRF (prazo 15 dias úteis). Uniformização: Pedido de Uniformização para a TNU (divergência entre Turmas Recursais ou com súmula/jurisprudência do STJ). Recurso especial ao STJ (se matéria infraconstitucional).
+  </div>
+  <div class="step" data-step="8">
+    <span class="step-title">Cumprimento de sentença / implantação do benefício</span>
+    Ofício ao INSS para implantação do benefício. RPV (Requisição de Pequeno Valor) até 60 SM por autor, ou precatório se acima. Prazo RPV: até 60 dias após a requisição.
+  </div>
+</div>
+
+<div class="alert alert-danger">
+  <strong>Prescrição e decadência</strong>
+  Prescrição quinquenal: atinge as parcelas anteriores aos 5 anos que antecederam o ajuizamento (art. 103, parágrafo único, Lei 8.213/91). Decadência decenal: prazo de 10 anos para revisão de benefício já concedido (art. 103, caput). O direito ao benefício em si é imprescritível.
+</div>
+
+<hr class="separator">
+
+<!-- ========================================= -->
+<!-- 7. TEMAS DA TNU                           -->
+<!-- ========================================= -->
+
+<h2 id="tnu"><span class="num">Seção 07</span> Principais Temas Julgados pela TNU</h2>
+
+<p class="intro-text">
+  Turma Nacional de Uniformização dos Juizados Especiais Federais — órgão responsável por uniformizar a jurisprudência das Turmas Recursais em matéria previdenciária e assistencial.
+</p>
+
+<h3>Aposentadoria Rural</h3>
+
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 06/TNU</span>
+  A certidão de casamento ou outro documento idôneo que evidencie a condição de trabalhador rural do cônjuge constitui início razoável de prova material da atividade rurícola.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 14/TNU</span>
+  Para a concessão de aposentadoria rural por idade, não se exige que o início de prova material corresponda a todo o período equivalente à carência do benefício.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 30/TNU</span>
+  Tratando-se de demanda previdenciária, o fato de o imóvel ser superior ao módulo rural não afasta, por si só, a qualificação de seu proprietário como segurado especial, desde que comprovada, nos autos, a sua exploração em regime de economia familiar.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 41/TNU</span>
+  A circunstância de um dos integrantes do núcleo familiar desempenhar atividade urbana não implica, por si só, a descaracterização do trabalhador rural como segurado especial, condição que deve ser analisada no caso concreto.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 46/TNU</span>
+  O exercício de atividade urbana intercalada não impede a concessão de benefício previdenciário de trabalhador rural, condição que deve ser analisada no caso concreto.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 54/TNU</span>
+  Para a concessão de aposentadoria por idade de trabalhador rural, o tempo de exercício de atividade equivalente à carência deve ser aferido no período imediatamente anterior ao requerimento administrativo ou à data do implemento da idade mínima.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 73/TNU</span>
+  Podem ser utilizados como início de prova material os documentos em nome de integrantes do mesmo grupo familiar, desde que corroborados por prova testemunhal.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema 204/TNU (PEDILEF 5003780-78.2018)</span>
+  A autodeclaração prevista no art. 38-B da Lei 8.213/91 constitui início de prova material e deve ser valorada pelo julgador em conjunto com as demais provas dos autos.
+</div>
+
+<h3>BPC-LOAS</h3>
+
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 48/TNU</span>
+  A incapacidade não precisa ser permanente para fins de concessão do benefício assistencial de prestação continuada.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 78/TNU (antiga Súmula 29)</span>
+  Para fins de concessão do BPC, o conceito de pessoa com deficiência não se confunde com incapacidade para o trabalho. A avaliação deve considerar os impedimentos de longo prazo e as barreiras sociais (modelo biopsicossocial — art. 2º da Lei 13.146/15).
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 79/TNU</span>
+  Nas demandas envolvendo BPC, a análise do impedimento de longo prazo deve considerar o histórico clínico do requerente e a sua condição pessoal.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema 038/TNU (PEDILEF 2007.83.03.50.0429-6)</span>
+  O critério de renda per capita de 1/4 do salário mínimo não é absoluto, podendo ser flexibilizado com base em outros elementos que comprovem a condição de miserabilidade (em consonância com STF — RE 567.985 e Reclamação 4.374).
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema 163/TNU</span>
+  As condições socioeconômicas, profissionais e culturais do requerente devem ser consideradas na avaliação da deficiência para concessão do BPC.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema 232/TNU (PEDILEF 0503005-93.2017)</span>
+  A deficiência, para fins de BPC, abrange o impedimento de longo prazo que, em interação com barreiras, obstrui a participação plena e efetiva na sociedade, independentemente do grau de incapacidade laborativa.
+</div>
+
+<h3>Salário-Maternidade Rural</h3>
+
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema 258/TNU</span>
+  A segurada especial faz jus ao salário-maternidade independentemente de contribuição, desde que comprovado o exercício de atividade rural nos 10 meses anteriores ao parto, ainda que de forma descontínua.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema correlato — ADI 2.110 e ADI 2.111 (STF)</span>
+  O STF reconheceu a constitucionalidade da exigência de carência para o salário-maternidade da segurada especial (10 contribuições mensais equivalentes à atividade rural), afastando a tese de que deveria ser concedido independentemente de qualquer comprovação temporal.
+</div>
+
+<h3>Temas Transversais</h3>
+
+<div class="tnu-item">
+  <span class="tnu-sumula">Tema 350/STF (RE 631.240)</span>
+  É indispensável o prévio requerimento administrativo como condição para o ajuizamento de ação previdenciária, salvo quando comprovada a notória resistência do INSS à concessão ou quando a posição do INSS for contrária ao pedido.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 47/TNU</span>
+  Uma vez reconhecido o direito ao benefício em tese, a definição da data de início e demais elementos deve ser feita na fase de execução, evitando-se nova fase de conhecimento.
+</div>
+<div class="tnu-item">
+  <span class="tnu-sumula">Súmula 149/STJ</span>
+  A prova exclusivamente testemunhal não basta à comprovação da atividade rurícola, para efeito da obtenção de benefício previdenciário.
+</div>
+
+<footer>
+  Roteiro elaborado com base na legislação vigente em setembro/2026.<br>
+  Lei 8.213/91 &bull; Lei 8.742/93 &bull; Lei 13.146/15 &bull; Decreto 3.048/99 &bull; IN INSS/PRES 128/2022 &bull; Súmulas e Temas da TNU/STJ/STF
+</footer>
+
+<script>
+(function() {
+  document.querySelectorAll('.checklist li').forEach(function(li) {
+    li.addEventListener('click', function() {
+      li.classList.toggle('checked');
+      updateProgress();
+      saveState();
+    });
+  });
+
+  function updateProgress() {
+    var total = document.querySelectorAll('.checklist li').length;
+    var checked = document.querySelectorAll('.checklist li.checked').length;
+    var pct = total ? Math.round((checked / total) * 100) : 0;
+    var fill = document.getElementById('progressFill');
+    var label = document.getElementById('progressLabel');
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.textContent = checked + ' / ' + total;
+  }
+
+  function saveState() {
+    try {
+      var state = {};
+      document.querySelectorAll('.checklist').forEach(function(ul, gi) {
+        var group = ul.getAttribute('data-group') || gi;
+        state[group] = [];
+        ul.querySelectorAll('li').forEach(function(li, i) {
+          if (li.classList.contains('checked')) state[group].push(i);
+        });
+      });
+      localStorage.setItem('prev-checklist', JSON.stringify(state));
+    } catch(e) {}
+  }
+
+  function loadState() {
+    try {
+      var raw = localStorage.getItem('prev-checklist');
+      if (!raw) return;
+      var state = JSON.parse(raw);
+      document.querySelectorAll('.checklist').forEach(function(ul, gi) {
+        var group = ul.getAttribute('data-group') || gi;
+        var indices = state[group] || [];
+        ul.querySelectorAll('li').forEach(function(li, i) {
+          if (indices.indexOf(i) !== -1) li.classList.add('checked');
+        });
+      });
+    } catch(e) {}
+  }
+
+  loadState();
+  updateProgress();
+})();
+</script>
