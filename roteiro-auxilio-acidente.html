@@ -1,0 +1,1106 @@
+<title>Roteiro Auxílio-Acidente</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  /* Layout: single-column legal reference with sticky nav, collapsible sections, and WhatsApp copy blocks */
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --surface-alt: #F0EDE6;
+    --text: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+    --accent: #1B5E3B;
+    --accent-light: #E8F0EB;
+    --accent-dark: #0F3D25;
+    --border: #D8D4CC;
+    --border-light: #E8E4DC;
+    --check-bg: #D4EDDA;
+    --check-border: #28A745;
+    --warn: #B8860B;
+    --warn-bg: #FFF8E1;
+    --info: #1565C0;
+    --info-bg: #E3F2FD;
+    --danger: #C62828;
+    --danger-bg: #FFEBEE;
+    --whatsapp: #25D366;
+    --whatsapp-bg: #E8FDF0;
+    --whatsapp-surface: #DCF8C6;
+    --section-num: #B8B0A0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06);
+    --table-header: #2c3e50;
+    --table-header-text: #fff;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141412;
+      --surface: #1E1E1C;
+      --surface-alt: #2A2A26;
+      --text: #E8E6E0;
+      --text-secondary: #B8B4AC;
+      --text-muted: #8A8680;
+      --accent: #4CAF6A;
+      --accent-light: #1A2E22;
+      --accent-dark: #6FCF8A;
+      --border: #3A3830;
+      --border-light: #2E2C26;
+      --check-bg: #1A2E22;
+      --check-border: #4CAF6A;
+      --warn: #FFB74D;
+      --warn-bg: #2E2410;
+      --info: #64B5F6;
+      --info-bg: #0D1F33;
+      --danger: #EF5350;
+      --danger-bg: #2E1414;
+      --whatsapp: #25D366;
+      --whatsapp-bg: #1A2E22;
+      --whatsapp-surface: #1E3A28;
+      --section-num: #5A5648;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+      --table-header: #1a2a36;
+      --table-header-text: #E8E6E0;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #141412;
+    --surface: #1E1E1C;
+    --surface-alt: #2A2A26;
+    --text: #E8E6E0;
+    --text-secondary: #B8B4AC;
+    --text-muted: #8A8680;
+    --accent: #4CAF6A;
+    --accent-light: #1A2E22;
+    --accent-dark: #6FCF8A;
+    --border: #3A3830;
+    --border-light: #2E2C26;
+    --check-bg: #1A2E22;
+    --check-border: #4CAF6A;
+    --warn: #FFB74D;
+    --warn-bg: #2E2410;
+    --info: #64B5F6;
+    --info-bg: #0D1F33;
+    --danger: #EF5350;
+    --danger-bg: #2E1414;
+    --whatsapp: #25D366;
+    --whatsapp-bg: #1A2E22;
+    --whatsapp-surface: #1E3A28;
+    --section-num: #5A5648;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    --table-header: #1a2a36;
+    --table-header-text: #E8E6E0;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    padding-inline: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Merriweather', Georgia, serif;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin: 2.5rem 0 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .subtitle {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+
+  .legal-refs {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    background: var(--surface-alt);
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.3rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--section-num);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--accent);
+  }
+
+  h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.4rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  .intro-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+  }
+
+  .checklist li:hover {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .checklist li.checked {
+    background: var(--check-bg);
+    border-color: var(--check-border);
+  }
+
+  .checklist li.checked .check-icon {
+    border-color: var(--check-border);
+    background: var(--check-border);
+    color: #fff;
+  }
+
+  .check-icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    font-size: 12px;
+    color: transparent;
+    transition: all 0.15s;
+    line-height: 1;
+  }
+
+  .note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .alert {
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    margin: 1rem 0;
+    line-height: 1.55;
+    border-left: 3px solid;
+  }
+
+  .alert-info { background: var(--info-bg); border-color: var(--info); }
+  .alert-warn { background: var(--warn-bg); border-color: var(--warn); }
+  .alert-danger { background: var(--danger-bg); border-color: var(--danger); }
+
+  .alert strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 2rem;
+  }
+
+  .toc-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .toc li { font-size: 0.88rem; line-height: 1.5; }
+
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .toc a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+  .progress-bar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-light);
+    padding: 8px 0;
+    z-index: 10;
+    margin-inline: -20px;
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .progress-track {
+    flex: 1;
+    height: 4px;
+    background: var(--border-light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  .progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    min-width: 60px;
+    text-align: right;
+  }
+
+  .separator {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 2rem 0;
+  }
+
+  /* Tables */
+  .ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .ref-table th {
+    background: var(--table-header);
+    color: var(--table-header-text);
+    padding: 10px 10px;
+    text-align: left;
+    border: 1px solid var(--border);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .ref-table td {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+
+  .ref-table tr:nth-child(even) td {
+    background: var(--surface-alt);
+  }
+
+  .ref-table td:first-child {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: var(--accent);
+  }
+
+  /* WhatsApp copy blocks */
+  .wa-block {
+    background: var(--whatsapp-bg);
+    border: 1px solid var(--whatsapp);
+    border-radius: 8px;
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+
+  .wa-header {
+    background: var(--whatsapp);
+    color: #fff;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .wa-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .wa-body {
+    padding: 14px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--text);
+  }
+
+  .btn-copy {
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: 'Source Sans 3', sans-serif;
+    transition: background 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-copy:hover { background: rgba(255,255,255,0.4); }
+  .btn-copy.copied { background: rgba(255,255,255,0.5); }
+
+  /* Tnu items */
+  .tnu-item {
+    padding: 12px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .tnu-item .tnu-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Tag badges */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.02em;
+  }
+  .tag-yes { background: var(--check-bg); color: var(--check-border); }
+  .tag-no { background: var(--danger-bg); color: var(--danger); }
+  .tag-warn { background: var(--warn-bg); color: var(--warn); }
+
+  footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 500px) {
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.1rem; }
+    .ref-table { font-size: 0.82rem; }
+    .ref-table td:first-child { white-space: normal; }
+  }
+</style>
+
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <span class="progress-label" id="progressLabel">0 / 0</span>
+</div>
+
+<h1>Roteiro de Atendimento: Auxílio-Acidente</h1>
+<p class="subtitle">Art. 86 da Lei 8.213/91 &mdash; Checklist de documentos, triagem, jurisprudência e roteiro de perguntas para WhatsApp</p>
+
+<div class="legal-refs">
+  Lei 8.213/91 (arts. 18 &sect;1&ordm;, 19-22, 26 I, 31, 86, 118, 124) &bull; Decreto 3.048/99 (arts. 30, 104; Anexo III) &bull; Leis 9.032/95 e 9.528/97 &bull; EC 103/2019 &bull; Lei 13.846/2019 &bull; IN PRES/INSS 128/2022 &bull; CC arts. 186, 927, 949-951 &bull; LC 207/2024 (SPVAT)
+</div>
+
+<nav class="toc">
+  <div class="toc-title">Sumário</div>
+  <ol>
+    <li><a href="#triagem">Triagem Inicial (Abertura do Atendimento)</a></li>
+    <li><a href="#aplica">Quando se Aplica</a></li>
+    <li><a href="#nao-aplica">Quando Não se Aplica</a></li>
+    <li><a href="#conflito">Conflito com Outros Benefícios</a></li>
+    <li><a href="#documentos">Laudos e Documentos</a></li>
+    <li><a href="#acidentes">Tipos de Acidente e Indenização</a></li>
+    <li><a href="#legislacao">Legislação Aplicável</a></li>
+    <li><a href="#sumulas">Súmulas e Teses Repetitivas</a></li>
+    <li><a href="#via-foro">Definição da Via e Foro</a></li>
+    <li><a href="#whatsapp">Roteiro de Perguntas para WhatsApp</a></li>
+  </ol>
+</nav>
+
+<!-- ================================================ -->
+<!-- 0. TRIAGEM INICIAL                               -->
+<!-- ================================================ -->
+
+<h2 id="triagem"><span class="num">Seção 00</span> Triagem Inicial</h2>
+
+<p class="intro-text">
+  Pontos a verificar na abertura do atendimento. Cada item define um elemento essencial para viabilidade do caso.
+</p>
+
+<ul class="checklist" data-group="triagem">
+  <li><span class="check-icon">&#10003;</span><span><strong>Acidente:</strong> data, local, mecanismo. Houve CAT, B.O. ou atendimento médico?</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Vínculo na data do acidente:</strong> CLT, avulso, segurado especial, autônomo/MEI, facultativo ou sem vínculo. Define a qualidade de segurado.</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Afastamento pelo INSS:</strong> espécie do benefício (B31 previdenciário ou B91 acidentário), data de cessação (DCB) e laudo de alta.</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Sequelas:</strong> o que o cliente não consegue mais fazer na função habitual.</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Função habitual:</strong> cargo, tarefas e esforço físico exigido.</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Benefício ativo ou em curso:</strong> aposentadoria, auxílio-doença, BPC, pensão.</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Terceiro culpado:</strong> empregador, motorista, empresa, condomínio (abre a frente de indenização civil).</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Prazos:</strong> DCB, ciência da sequela, data do acidente.</span></li>
+</ul>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 1. QUANDO SE APLICA                              -->
+<!-- ================================================ -->
+
+<h2 id="aplica"><span class="num">Seção 01</span> Quando se Aplica</h2>
+
+<p class="intro-text">
+  Todos os requisitos abaixo devem estar presentes (art. 86 da Lei 8.213/91):
+</p>
+
+<ul class="checklist" data-group="aplica">
+  <li><span class="check-icon">&#10003;</span><span>Acidente de qualquer natureza, incluindo acidente de trabalho e doenças ocupacionais equiparadas (arts. 19 a 21)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Qualidade de segurado na data do acidente: empregado (inclusive doméstico), trabalhador avulso ou segurado especial</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Consolidação das lesões, com sequela permanente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Redução da capacidade para o trabalho habitual <span class="note">O STJ admite o benefício mesmo com grau mínimo de redução, desde que haja nexo. A lista do Anexo III do Decreto 3.048/99 é exemplificativa.</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>Sem carência (art. 26, I)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Não exige auxílio-doença prévio <span class="note">Na prática, a maioria dos casos o tem, pois o benefício começa no dia seguinte à cessação dele (art. 86, §2º).</span></span></li>
+</ul>
+
+<div class="alert alert-info">
+  <strong>Valor e natureza</strong>
+  50% do salário de benefício. Natureza indenizatória. Compatível com a continuidade do trabalho (art. 86, §2º).
+</div>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 2. QUANDO NÃO SE APLICA                          -->
+<!-- ================================================ -->
+
+<h2 id="nao-aplica"><span class="num">Seção 02</span> Quando Não se Aplica</h2>
+
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th style="width:40%;">Situação</th><th>Motivo</th></tr>
+</thead>
+<tbody>
+  <tr><td>Contribuinte individual, MEI ou facultativo</td><td>Fora do rol do art. 18, §1º</td></tr>
+  <tr><td>Doença comum, degenerativa ou congênita</td><td>Sem nexo com acidente ou trabalho — não é "acidente de qualquer natureza"</td></tr>
+  <tr><td>Lesão curada, sem sequela</td><td>Falta o requisito central (redução da capacidade)</td></tr>
+  <tr><td>Perda da qualidade de segurado antes do acidente</td><td>Falta requisito de filiação</td></tr>
+  <tr><td>Incapacidade total e permanente</td><td>Cabe aposentadoria por incapacidade permanente, não auxílio-acidente</td></tr>
+  <tr><td>Lesão/sequela posterior à aposentadoria</td><td>Vedação do art. 86, §2º (desde a Lei 9.528/97)</td></tr>
+  <tr><td>Já recebe auxílio-acidente pelo mesmo fato</td><td>Art. 124, V — vedação de acúmulo</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 3. CONFLITO COM OUTROS BENEFÍCIOS                -->
+<!-- ================================================ -->
+
+<h2 id="conflito"><span class="num">Seção 03</span> Conflito com Outros Benefícios</h2>
+
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Benefício</th><th>Acumula?</th><th>Observação</th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Aposentadoria (qualquer)</td>
+    <td><span class="tag tag-no">NÃO</span></td>
+    <td>Cessa na véspera. Valor integra o salário de contribuição no cálculo (art. 31). Exceção: lesão e aposentadoria anteriores a 11/11/1997 (Súm. 507 STJ, Tema 416).</td>
+  </tr>
+  <tr>
+    <td>Auxílio-doença</td>
+    <td><span class="tag tag-warn">PARCIAL</span></td>
+    <td>Acumulável somente se o novo auxílio-doença tiver causa diversa. Pela mesma lesão, não acumula (nasce após cessação).</td>
+  </tr>
+  <tr>
+    <td>Outro auxílio-acidente</td>
+    <td><span class="tag tag-no">NÃO</span></td>
+    <td>Art. 124, V. Novo infortúnio: Súmula 146 STJ.</td>
+  </tr>
+  <tr>
+    <td>Salário e trabalho</td>
+    <td><span class="tag tag-yes">SIM</span></td>
+    <td>Compatível com a continuidade do trabalho (art. 86, §2º).</td>
+  </tr>
+  <tr>
+    <td>Pensão por morte</td>
+    <td><span class="tag tag-yes">SIM</span></td>
+    <td>Em regra, acumulável.</td>
+  </tr>
+  <tr>
+    <td>BPC/LOAS</td>
+    <td><span class="tag tag-warn">ATENÇÃO</span></td>
+    <td>A LOAS veda o acúmulo com outro benefício da seguridade, salvo natureza indenizatória.</td>
+  </tr>
+  <tr>
+    <td>Indenização civil / DPVAT / SPVAT</td>
+    <td><span class="tag tag-yes">SIM</span></td>
+    <td>Independentes do benefício previdenciário.</td>
+  </tr>
+  <tr>
+    <td>Estabilidade acidentária (art. 118)</td>
+    <td><span class="tag tag-yes">SIM</span></td>
+    <td>12 meses após cessação do auxílio-doença acidentário. Não conflita.</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 4. LAUDOS E DOCUMENTOS                           -->
+<!-- ================================================ -->
+
+<h2 id="documentos"><span class="num">Seção 04</span> Laudos e Documentos</h2>
+
+<h3>Documentos Obrigatórios</h3>
+<ul class="checklist" data-group="docs-obrig">
+  <li><span class="check-icon">&#10003;</span><span>Documentos pessoais, CPF, comprovante de residência e procuração</span></li>
+  <li><span class="check-icon">&#10003;</span><span>CNIS e carteira de trabalho, ou prova de atividade rural (segurado especial)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comunicado da decisão de alta e histórico do INSS (Meu INSS: DCB, espécie do benefício)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Laudos e relatórios médicos com CID, descrição da sequela e nexo com o acidente</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Prontuário e exames de imagem (RX, RM, TC), eletroneuromiografia e audiometria, conforme o caso</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Indicação das limitações para a função habitual</span></li>
+</ul>
+
+<h3>Acidente de Trabalho</h3>
+<ul class="checklist" data-group="docs-trab">
+  <li><span class="check-icon">&#10003;</span><span>CAT (Comunicação de Acidente de Trabalho) <span class="note">Pode ser emitida pelo segurado, sindicato, médico ou autoridade pública</span></span></li>
+  <li><span class="check-icon">&#10003;</span><span>PPP (Perfil Profissiográfico Previdenciário)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>LTCAT, PCMSO/PGR e ASO</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Descrição do cargo e testemunhas</span></li>
+</ul>
+
+<h3>Acidente de Trânsito ou Outro</h3>
+<ul class="checklist" data-group="docs-transit">
+  <li><span class="check-icon">&#10003;</span><span>B.O. (Boletim de Ocorrência)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Laudo do IML ou perícia criminal</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Documentos do veículo, fotos e dados do culpado</span></li>
+</ul>
+
+<h3>Indenização Civil</h3>
+<ul class="checklist" data-group="docs-indeniz">
+  <li><span class="check-icon">&#10003;</span><span>Notas e recibos de despesas médicas, farmacêuticas e de transporte</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Laudo de dano estético, fotos antes e depois</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Comprovantes de renda e de perda de ganho</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Documentos do seguro (apólice de acidentes pessoais ou de vida)</span></li>
+</ul>
+
+<div class="alert alert-info">
+  <strong>Processo judicial</strong>
+  Em ação acidentária ou previdenciária, a perícia judicial é a prova determinante. Preparar quesitos e, se possível, contar com assistente técnico.
+</div>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 5. TIPOS DE ACIDENTE E INDENIZAÇÃO               -->
+<!-- ================================================ -->
+
+<h2 id="acidentes"><span class="num">Seção 05</span> Tipos de Acidente e Indenização</h2>
+
+<h3>Acidentes que geram o benefício</h3>
+<ul class="checklist" data-group="tipos-acid">
+  <li><span class="check-icon">&#10003;</span><span>Acidente de trabalho típico</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Doença profissional ou do trabalho (arts. 20 e 21 — ex.: LER/DORT, perda auditiva, pneumoconiose)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Acidente de trajeto (art. 21, IV, d)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Acidente de qualquer natureza ou causa (art. 30, Decreto 3.048): trauma, exposição a agentes, trânsito, queda, esportes ou agressão</span></li>
+</ul>
+
+<h3>Indenização por Danos (frente separada do auxílio-acidente)</h3>
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Frente</th><th>Fundamento</th><th>Observações</th></tr>
+</thead>
+<tbody>
+  <tr><td>Empregador</td><td>CF art. 7º, XXVIII; CC arts. 186, 927, 950; Súm. 229 STF</td><td>Culpa/dolo ou responsabilidade objetiva (atividade de risco). Justiça do Trabalho (SV 22 STF).</td></tr>
+  <tr><td>Terceiro causador</td><td>CC arts. 186, 927, 949-951</td><td>Justiça comum.</td></tr>
+  <tr><td>Seguro obrigatório</td><td>Lei 6.194/74 (DPVAT); LC 207/2024 (SPVAT)</td><td>Conferir o regime vigente para a data do fato.</td></tr>
+  <tr><td>Seguros privados</td><td>Apólice</td><td>Acidentes pessoais e vida.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-warn">
+  <strong>Verbas indenizatórias</strong>
+  Danos materiais (despesas, lucros cessantes, pensão pela redução da capacidade), morais e estéticos. Dano moral e estético são cumuláveis (Súmula 387 STJ).
+</div>
+
+<h3>Prazos Prescricionais</h3>
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Situação</th><th>Prazo</th><th>Termo Inicial</th></tr>
+</thead>
+<tbody>
+  <tr><td>Indenização contra terceiros</td><td>3 anos (CC art. 206, §3º, V)</td><td>Ciência inequívoca da incapacidade (Súm. 278 STJ)</td></tr>
+  <tr><td>Empregador (Justiça do Trabalho)</td><td>5 anos na vigência / 2 anos após término</td><td>Ciência inequívoca</td></tr>
+  <tr><td>Benefício previdenciário</td><td>Fundo de direito não prescreve; parcelas em 5 anos</td><td>Súmula 85 STJ</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 6. LEGISLAÇÃO APLICÁVEL                          -->
+<!-- ================================================ -->
+
+<h2 id="legislacao"><span class="num">Seção 06</span> Legislação Aplicável</h2>
+
+<ul class="checklist" data-group="legis">
+  <li><span class="check-icon">&#10003;</span><span><strong>CF/88:</strong> art. 7º, XXVIII; art. 109, I; art. 201, I</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Lei 8.213/91:</strong> arts. 18 §1º; 19 a 21; 22 (CAT); 26 I; 31; 86; 118; 124; 129 e 129-A</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Leis 9.032/95 e 9.528/97:</strong> alterações do art. 86 (vitaliciedade e vedação de acúmulo)</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Decreto 3.048/99:</strong> arts. 30 e 104; Anexo III (lista exemplificativa de sequelas)</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>EC 103/2019</strong> e <strong>Lei 13.846/2019</strong></span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>IN PRES/INSS 128/2022</strong> (conferir versão atual)</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Código Civil:</strong> arts. 186, 927, 949 a 951</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>Lei 6.194/74 e LC 207/2024:</strong> DPVAT/SPVAT (conferir regime vigente)</span></li>
+  <li><span class="check-icon">&#10003;</span><span><strong>CPC/2015 e CLT:</strong> competência da Justiça do Trabalho</span></li>
+</ul>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 7. SÚMULAS E TESES                               -->
+<!-- ================================================ -->
+
+<h2 id="sumulas"><span class="num">Seção 07</span> Súmulas e Teses Repetitivas</h2>
+
+<h3>STJ — Auxílio-Acidente e Ação Acidentária</h3>
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Súmula / Tema</th><th>Conteúdo</th></tr>
+</thead>
+<tbody>
+  <tr><td>Súmula 507</td><td>Acumulação com aposentadoria só quando lesão e aposentadoria são anteriores a 11/11/1997.</td></tr>
+  <tr><td>Súmula 146</td><td>Novo infortúnio gera um único benefício, somado ao salário de contribuição do dia do acidente.</td></tr>
+  <tr><td>Súmula 159</td><td>Remuneração variável: cálculo pela média aritmética dos 12 últimos meses.</td></tr>
+  <tr><td>Súmula 15</td><td>Competência da Justiça estadual nos litígios decorrentes de acidente do trabalho.</td></tr>
+  <tr><td>Súmula 89</td><td>A ação acidentária dispensa o exaurimento da via administrativa.</td></tr>
+  <tr><td>Súmula 110</td><td>Isenção de honorários nas ações acidentárias é restrita ao segurado.</td></tr>
+  <tr><td>Súmula 111</td><td>Honorários nas ações previdenciárias não incidem sobre prestações vencidas após a sentença.</td></tr>
+  <tr><td>Súmula 85</td><td>Prescrição quinquenal das parcelas.</td></tr>
+  <tr><td>Tema 416</td><td>REsp 1.296.673/MG: aplicação da lei vigente à época da lesão.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>STJ — Indenização Civil</h3>
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Súmula</th><th>Conteúdo</th></tr>
+</thead>
+<tbody>
+  <tr><td>Súmula 278</td><td>Termo inicial da prescrição: ciência inequívoca da incapacidade.</td></tr>
+  <tr><td>Súmula 37</td><td>Dano material e moral são cumuláveis.</td></tr>
+  <tr><td>Súmula 387</td><td>Dano estético e moral são cumuláveis.</td></tr>
+  <tr><td>Súmula 54</td><td>Juros de mora desde o evento danoso (responsabilidade extracontratual).</td></tr>
+  <tr><td>Súmula 43</td><td>Correção monetária desde o efetivo prejuízo.</td></tr>
+  <tr><td>Súmula 362</td><td>Correção monetária do dano moral desde o arbitramento.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>STJ — DPVAT/SPVAT</h3>
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Súmula</th><th>Conteúdo</th></tr>
+</thead>
+<tbody>
+  <tr><td>Súmula 246</td><td>Dedução do seguro obrigatório da indenização judicial.</td></tr>
+  <tr><td>Súmula 257</td><td>A falta de pagamento do prêmio não afasta a cobertura.</td></tr>
+  <tr><td>Súmula 405</td><td>Prescrição de 3 anos.</td></tr>
+  <tr><td>Súmula 426</td><td>Juros de mora desde a citação.</td></tr>
+  <tr><td>Súmula 474</td><td>Pagamento proporcional ao grau da invalidez.</td></tr>
+  <tr><td>Súmula 580</td><td>Correção monetária desde o evento danoso.</td></tr>
+  <tr><td>Súmula 229</td><td>Pedido de pagamento à seguradora suspende a prescrição.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="alert alert-info">
+  <strong>Complementares</strong>
+  Súmula Vinculante 22 e Súmulas 229 e 501 do STF; Súmula 378 do TST.
+</div>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 8. DEFINIÇÃO DA VIA E FORO                       -->
+<!-- ================================================ -->
+
+<h2 id="via-foro"><span class="num">Seção 08</span> Definição da Via e Foro</h2>
+
+<div style="overflow-x:auto;">
+<table class="ref-table">
+<thead>
+  <tr><th>Situação</th><th>Via e Foro</th></tr>
+</thead>
+<tbody>
+  <tr><td>Acidente do trabalho (B36)</td><td>Requerimento no INSS; se negado, ação acidentária na Justiça estadual (Súm. 15 STJ; art. 109, I, CF). Súm. 89 dispensa exaurimento administrativo.</td></tr>
+  <tr><td>Acidente de qualquer natureza, fora do trabalho (B94)</td><td>Requerimento no INSS; se negado, ação na Justiça Federal. Exige prévio requerimento (RE 631.240).</td></tr>
+  <tr><td>Indenização contra empregador</td><td>Justiça do Trabalho (SV 22 STF).</td></tr>
+  <tr><td>Indenização contra terceiro</td><td>Justiça comum estadual.</td></tr>
+  <tr><td>SPVAT / seguros</td><td>Conforme regime vigente e apólice.</td></tr>
+</tbody>
+</table>
+</div>
+
+<ul class="checklist" data-group="encerramento">
+  <li><span class="check-icon">&#10003;</span><span>Calcular os prazos (DCB, ciência da sequela, data do acidente)</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Definir a via conforme o quadro acima</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Entregar ao cliente o Checklist do Cliente e marcar o retorno</span></li>
+  <li><span class="check-icon">&#10003;</span><span>Alertar que o resultado depende da perícia e que não há garantia de êxito</span></li>
+</ul>
+
+<hr class="separator">
+
+<!-- ================================================ -->
+<!-- 9. ROTEIRO DE PERGUNTAS PARA WHATSAPP            -->
+<!-- ================================================ -->
+
+<h2 id="whatsapp"><span class="num">Seção 09</span> Roteiro de Perguntas para WhatsApp</h2>
+
+<p class="intro-text">
+  Clique em "Copiar" para copiar o texto pronto para colar no WhatsApp. Cada bloco pode ser enviado separadamente conforme a fase do atendimento.
+</p>
+
+<!-- WA BLOCO 1: APRESENTAÇÃO -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Apresentação e Abertura
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">Olá! Tudo bem? Sou do escritório do Dr./Dra. [nome].
+
+Para avaliarmos o seu caso de *auxílio-acidente*, preciso de algumas informações. Vou enviar as perguntas por partes para facilitar, ok?
+
+Pode responder no seu tempo. 🙂</div>
+</div>
+
+<!-- WA BLOCO 2: SOBRE O ACIDENTE -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Parte 1 — Sobre o Acidente
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">*PARTE 1 — SOBRE O ACIDENTE*
+
+1️⃣ Qual foi a *data do acidente*?
+
+2️⃣ *Onde* aconteceu? (no trabalho, no trajeto, na rua, em casa?)
+
+3️⃣ *Como* aconteceu? Descreva brevemente o que ocorreu.
+
+4️⃣ Na época do acidente, você trabalhava de *carteira assinada*? Se não, qual era sua situação? (autônomo, MEI, rural, sem vínculo?)
+
+5️⃣ Foi feito algum *B.O.* (Boletim de Ocorrência) ou *CAT* (Comunicação de Acidente de Trabalho)?
+
+6️⃣ Houve *atendimento médico* na hora? Em qual hospital ou UPA?</div>
+</div>
+
+<!-- WA BLOCO 3: SOBRE O AFASTAMENTO -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Parte 2 — Afastamento e INSS
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">*PARTE 2 — AFASTAMENTO E INSS*
+
+7️⃣ Você ficou *afastado pelo INSS*? Se sim:
+   - Qual o *tipo do benefício*? (auxílio-doença comum *B31* ou acidentário *B91*?)
+   - Qual a *data que o INSS deu alta*? (DCB)
+
+8️⃣ Você *voltou a trabalhar* depois da alta?
+
+9️⃣ Recebe atualmente algum *benefício do INSS*? (aposentadoria, auxílio-doença, BPC, pensão?)</div>
+</div>
+
+<!-- WA BLOCO 4: SOBRE AS SEQUELAS -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Parte 3 — Sequelas e Limitações
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">*PARTE 3 — SEQUELAS E LIMITAÇÕES*
+
+🔟 Quais *sequelas* ficaram do acidente? (dor, perda de movimento, perda auditiva, cicatriz, etc.)
+
+1️⃣1️⃣ O que você *não consegue mais fazer* que fazia antes? (carregar peso, ficar em pé, subir escada, dirigir, etc.)
+
+1️⃣2️⃣ Qual era a sua *função/cargo* no trabalho? Que tipo de *esforço físico* exigia?
+
+1️⃣3️⃣ Você tem *laudos médicos* descrevendo essas sequelas? E *exames de imagem* (raio-x, ressonância, tomografia)?</div>
+</div>
+
+<!-- WA BLOCO 5: TERCEIRO CULPADO -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Parte 4 — Culpa de Terceiro / Indenização
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">*PARTE 4 — CULPA DE TERCEIRO E INDENIZAÇÃO*
+
+1️⃣4️⃣ O acidente foi *culpa de alguém*? (empregador, outro motorista, empresa, condomínio?)
+
+1️⃣5️⃣ Você teve *gastos* com o acidente? (remédios, cirurgias, transporte, fisioterapia?)
+   - Se sim, guardou *notas e recibos*?
+
+1️⃣6️⃣ Você tem *seguro de vida* ou *seguro de acidentes pessoais*?
+
+1️⃣7️⃣ Se foi acidente de trânsito: já solicitou o *seguro obrigatório* (DPVAT/SPVAT)?</div>
+</div>
+
+<!-- WA BLOCO 6: DOCUMENTOS PARA ENVIAR -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Parte 5 — Documentos para Enviar
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">*PARTE 5 — DOCUMENTOS QUE PRECISO QUE VOCÊ ENVIE*
+
+Por favor, envie fotos ou PDF dos seguintes documentos:
+
+📄 *Pessoais:*
+• RG e CPF (ou CNH)
+• Comprovante de residência recente
+
+📄 *Trabalhistas:*
+• Carteira de Trabalho (página da foto, qualificação civil e contratos)
+• CNIS (extrato do Meu INSS)
+• Carta de concessão / cessação do benefício do INSS
+
+📄 *Médicos:*
+• Laudos e relatórios médicos (com CID)
+• Exames de imagem
+• CAT (se acidente de trabalho)
+
+📄 *Acidente:*
+• B.O. (se houver)
+• Fotos do local ou do acidente
+• Notas/recibos de despesas
+
+Pode enviar aos poucos, sem pressa. Vou organizando aqui. 👍</div>
+</div>
+
+<!-- WA BLOCO 7: ENCERRAMENTO -->
+<div class="wa-block">
+  <div class="wa-header">
+    <div class="wa-header-left">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      Encerramento
+    </div>
+    <button class="btn-copy" onclick="copyWA(this)">Copiar</button>
+  </div>
+  <div class="wa-body">Obrigado(a) pelas informações! Com base no que você me enviou, vou analisar o caso e retorno em breve com a orientação.
+
+⚠️ *Importante:* o resultado depende da perícia médica (administrativa ou judicial) e não há como garantir o êxito. Mas vamos trabalhar com o melhor cenário possível.
+
+Qualquer dúvida, estou à disposição!</div>
+</div>
+
+<footer>
+  Roteiro de Atendimento &mdash; Auxílio-Acidente (art. 86 da Lei 8.213/91)<br>
+  Documento de uso interno &bull; Atualizado em outubro/2026<br>
+  Elaborado com base na legislação e jurisprudência vigentes.
+</footer>
+
+<script>
+(function() {
+  var KEY = 'auxilio-acidente-checks-v1';
+
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e) { return {}; }
+  }
+
+  function saveState(state) {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+  }
+
+  function updateProgress() {
+    var all = document.querySelectorAll('.checklist li');
+    var checked = document.querySelectorAll('.checklist li.checked');
+    var pct = all.length ? Math.round((checked.length / all.length) * 100) : 0;
+    var fill = document.getElementById('progressFill');
+    var label = document.getElementById('progressLabel');
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.textContent = checked.length + ' / ' + all.length;
+  }
+
+  var state = loadState();
+
+  document.querySelectorAll('.checklist').forEach(function(list) {
+    var group = list.getAttribute('data-group') || 'default';
+    list.querySelectorAll('li').forEach(function(li, idx) {
+      var key = group + '-' + idx;
+      if (state[key]) li.classList.add('checked');
+      li.addEventListener('click', function() {
+        li.classList.toggle('checked');
+        var s = loadState();
+        if (li.classList.contains('checked')) { s[key] = true; } else { delete s[key]; }
+        saveState(s);
+        updateProgress();
+      });
+    });
+  });
+
+  updateProgress();
+})();
+
+function copyWA(btn) {
+  var body = btn.closest('.wa-block').querySelector('.wa-body');
+  var text = body.textContent || body.innerText;
+  try {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copiado!';
+      btn.classList.add('copied');
+      setTimeout(function() { btn.textContent = 'Copiar'; btn.classList.remove('copied'); }, 2000);
+    }).catch(function() {
+      fallbackSelect(body);
+    });
+  } catch(e) {
+    fallbackSelect(body);
+  }
+}
+
+function fallbackSelect(el) {
+  var range = document.createRange();
+  range.selectNodeContents(el);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+</script>
